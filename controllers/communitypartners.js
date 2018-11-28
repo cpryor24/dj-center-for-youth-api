@@ -2,13 +2,13 @@ const knex = require("../db/knex.js");
 
 module.exports = {
   index: (req, res) => {
-    knex('partners')
+    knex('communityPartners')
       .then(results => {
         res.json(results);
       })
   },
   show: (req, res) => {
-    knex('partners')
+    knex('communityPartners')
       .where('id', req.params.id)
       .then(result => {
         res.json(result[0]);
@@ -17,7 +17,7 @@ module.exports = {
   },
   create: (req, res) => {
     let { company_name, url } = req.body;
-    knex('partners')
+    knex('communityPartners')
       .insert({
         company_name,
         url
@@ -29,7 +29,7 @@ module.exports = {
   },
   update: (req, res) => {
     let { company_name, url} = req.body;
-    knex('partners')
+    knex('communityPartners')
       .where('id', req.params.id)
       .update({
         company_name,
@@ -41,7 +41,7 @@ module.exports = {
       .catch(err => console.log(err));
   },
   delete: (req, res) => {
-    knex('partners')
+    knex('communityPartners')
       .where('id', req.params.id)
       .del()
       .then(() => {
