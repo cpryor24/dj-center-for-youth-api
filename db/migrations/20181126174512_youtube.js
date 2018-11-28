@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('youtube', (table) => {
     table.increments();
-    table.string('video_url');
+    table.text('video_url');
     table.timestamps(true, true);
   })
 };

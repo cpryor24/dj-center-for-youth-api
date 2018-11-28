@@ -2,7 +2,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('resources', (table) => {
     table.increments();
     table.string('business_name').unique();
-    table.string('url');
+    table.text('url');
     table.timestamps(true, true);
   });
 };

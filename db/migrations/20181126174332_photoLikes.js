@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('photoLikes', (table) => {
     table.increments();
     table.integer('likes');
-    table.integer('photo_id');
+    table.integer('photo_id')
       .notNullable()
       .references('id')
       .inTable('photos')

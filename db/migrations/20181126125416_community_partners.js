@@ -3,7 +3,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('communityPartners', (table) => {
     table.increments();
     table.string('company_name').unique();
-    table.string('url');
+    table.text('url');
     table.timestamps(true, true);
   });
 };
