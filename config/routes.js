@@ -62,11 +62,11 @@ module.exports = (app) => {
   app.delete('/programs/delete/:id', programs.delete);
 
   //Seccondary Programs
-  app.get('/', secondaryprograms.index);
-  app.get('programs/:secondaryprograms/:id', secondaryprograms.show);
-  app.post('programs/add/:secondaryprograms', secondaryprograms.create);
-  app.patch('programs/:secondaryprograms/edit/:id', secondaryprograms.update);
-  app.delete('programs/:secondaryprograms/delete/:id', secondaryprograms.delete);
+  app.get('/programs/', secondaryprograms.index);
+  app.get('programs/servicelearning/:secondaryprograms/:id', secondaryprograms.show);
+  app.post('programs/servicelearning', secondaryprograms.create);
+  app.patch('programs/servicelearning/:secondaryprograms/edit/:id', secondaryprograms.update);
+  app.delete('programs/servicelearning/:secondaryprograms/delete/:id', secondaryprograms.delete);
 
   // Resources
   app.get('/resources', resources.index);
