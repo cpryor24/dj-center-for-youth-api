@@ -81,6 +81,4 @@ module.exports = (app) => {
   app.post('/ytvideos', ytvideos.create);
   app.patch('/ytvideos/edit/:id', ytvideos.update);
   app.delete('/ytvideos/delete/:id', ytvideos.delete);
-
-
 }
