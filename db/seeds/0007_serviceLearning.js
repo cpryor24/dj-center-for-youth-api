@@ -1,9 +1,9 @@
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('secondaryPrograms').del()
+  return knex('serviceLearning').del()
     .then(function () {
       // Inserts seed entries
-      return knex('secondaryPrograms').insert([
+      return knex('serviceLearning').insert([
         {title: 'Catwalk for Cancer', description: 'Fashion show fundraiser that promotes youth and adult creativity while using it as a forum to discuss the importance for males and females to regularly have mammograms, statistics impacting those who are most vulnerable and the supports needed for those going through chemotherapy.', program_id: 4, grantor_id: 1},
         {title: 'Children Caring for Children (C3)', description: 'The program was to bring hope and hugs to those affected by the hurricanes in Puerto Rico. Care packages were made for the youth by the youth to show care and compassion and to teach about the impact of disasters and loss.', program_id: 4, grantor_id: 7},
         {title: 'College-Readiness', description: 'The six-week program in support with Jobs for America’s Graduates and IU School of Social Work begins to start the discussion with middle and high-schoolers about post High School graduation options. The programs integrates workshops around admissions, SMART goals and interests/hobbies.', program_id: 4, grantor_id: 6},

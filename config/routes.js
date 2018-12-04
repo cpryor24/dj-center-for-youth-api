@@ -1,19 +1,19 @@
 const main = require('../controllers/main.js');
-const resources = require('../controllers/resources.js')
-const events = require('../controllers/events.js');
+const awards = require('../controllers/awards.js');
 const boardofdirectors = require('../controllers/boardofdirectors.js');
 const communitypartners = require('../controllers/communitypartners.js');
-const ytvideos = require('../controllers/ytvideos.js');
+const events = require('../controllers/events.js');
 const grantors = require('../controllers/grantors.js');
-const programs = require('../controllers/programs.js');
 const photos = require('../controllers/photos.js');
-const awards = require('../controllers/awards.js');
-const secondaryprograms = require('../controllers/secondaryprograms.js');
+const programs = require('../controllers/programs.js');
+const resources = require('../controllers/resources.js')
+const servicelearning = require('../controllers/servicelearning.js');
+const youtube = require('../controllers/youtube.js');
 
 module.exports = (app) => {
 
   // Awards
-  // app.get('/', awards.index);
+  app.get('/awards', awards.index);
   app.get('/awards/:id', awards.show);
   app.post('/awards', awards.create);
   app.patch('/awards/edit/:id', awards.update);
@@ -48,25 +48,25 @@ module.exports = (app) => {
   app.delete('/communitypartners/delete/:id', communitypartners.delete);
 
   // Photos
-  // app.get('/', photos.index);
+  app.get('/photos', photos.index);
   app.get('/photos/:id', photos.show);
   app.post('/photos', photos.create);
   app.patch('/photos/edit/:id', photos.update);
   app.delete('/photos/delete/:id', photos.delete);
 
   // Programs
-  app.get('/', programs.index);
+  app.get('/programs', programs.index);
   app.get('/programs/:id', programs.show);
   app.post('/programs', programs.create);
   app.patch('/programs/edit/:id', programs.update);
   app.delete('/programs/delete/:id', programs.delete);
 
   //Seccondary Programs
-  app.get('/programs/', secondaryprograms.index);
-  app.get('programs/servicelearning/:secondaryprograms/:id', secondaryprograms.show);
-  app.post('programs/servicelearning', secondaryprograms.create);
-  app.patch('programs/servicelearning/:secondaryprograms/edit/:id', secondaryprograms.update);
-  app.delete('programs/servicelearning/:secondaryprograms/delete/:id', secondaryprograms.delete);
+  app.get('/servicelearning', servicelearning.index);
+  app.get('servicelearning/:id', servicelearning.show);
+  app.post('servicelearning', servicelearning.create);
+  app.patch('servicelearning/edit/:id', servicelearning.update);
+  app.delete('servicelearning/delete/:id', servicelearning.delete);
 
   // Resources
   app.get('/resources', resources.index);
@@ -76,9 +76,9 @@ module.exports = (app) => {
   app.delete('/resources/delete/:id', resources.delete);
 
   // Youtube
-  app.get('/ytvideos', ytvideos.index);
-  app.get('/ytvideos/:id', ytvideos.show);
-  app.post('/ytvideos', ytvideos.create);
-  app.patch('/ytvideos/edit/:id', ytvideos.update);
-  app.delete('/ytvideos/delete/:id', ytvideos.delete);
+  app.get('/youtube', youtube.index);
+  app.get('/youtube/:id', youtube.show);
+  app.post('/youtube', youtube.create);
+  app.patch('/youtube/edit/:id', youtube.update);
+  app.delete('/youtube/delete/:id', youtube.delete);
 }

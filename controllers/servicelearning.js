@@ -2,13 +2,13 @@ const knex = require("../db/knex.js");
 
 module.exports = {
   index: (req, res) => {
-    knex('secondaryPrograms')
+    knex('serviceLearning')
       .then(results => {
         res.json(results);
       })
   },
   show: (req, res) => {
-    knex('secondaryPrograms')
+    knex('serviceLearning')
       .where('id', req.params.id)
       .then(result => {
         res.json(result[0]);
@@ -17,7 +17,7 @@ module.exports = {
   },
   create: (req, res) => {
     let { title, description, grantor_id, program_id } = req.body;
-    knex('secondaryPrograms')
+    knex('serviceLearning')
       .insert({
         title,
         description,
@@ -31,7 +31,7 @@ module.exports = {
   },
   update: (req, res) => {
     let { title, description, grantor_id, program_id} = req.body;
-    knex('secondaryPrograms')
+    knex('serviceLearning')
       .where('id', req.params.id)
       .update({
         title,
@@ -45,7 +45,7 @@ module.exports = {
       .catch(err => console.log(err));
   },
   delete: (req, res) => {
-    knex('secondaryPrograms')
+    knex('serviceLearning')
       .where('id', req.params.id)
       .del()
       .then(() => {

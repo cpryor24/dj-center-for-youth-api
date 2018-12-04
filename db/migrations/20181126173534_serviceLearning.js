@@ -1,6 +1,6 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('secondaryPrograms', (table) => {
+  return knex.schema.createTable('serviceLearning', (table) => {
     table.increments();
     table.string('title');
     table.text('description');
@@ -20,5 +20,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('secondaryPrograms');
+  return knex.schema.dropTable('serviceLearning');
 };
